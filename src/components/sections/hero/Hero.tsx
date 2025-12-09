@@ -1,5 +1,6 @@
 "use client";
 import { gsap, useGSAP } from "@/src/lib/gsap";
+import AnimatedCircle from "./AnimatedCircle";
 
 export default function Hero() {
   useGSAP(() => {
@@ -18,8 +19,15 @@ export default function Hero() {
       {
         y: 200,
       },
-      { y: 0, opacity: 1, delay: 0.5, ease: "circ.out" }
+      { y: 0, opacity: 1, delay: 0.8, duration: 0.6, ease: "circ.out" }
     );
+
+    gsap.to(".bottom-circle", {
+      delay: 1.2,
+      opacity: 1,
+      scale: 1,
+      ease: "expo.out",
+    });
   }, []);
 
   return (
@@ -28,26 +36,31 @@ export default function Hero() {
         <div className="flex-1 max-w-[1100px]">
           <div className="h-[120px]" />
           <div className="text-white flex flex-1 flex-col h-[85vh]">
-            <div className="flex flex-col flex-3">
+            <div className="flex flex-col flex-2">
               <div className="flex h-[110px] overflow-hidden">
                 <span
-                  className={`animated-text text-[120px] leading-none tracking-[0px] opacity-0`}
+                  className={`animated-text text-[110px] leading-none tracking-[0px] opacity-0`}
                 >
                   Pulso
                 </span>
               </div>
               <div className="flex h-[110px] overflow-hidden">
                 <span
-                  className={`animated-text text-[120px] leading-none tracking-[0px] opacity-0`}
+                  className={`animated-text text-[110px] leading-none tracking-[0px] opacity-0`}
                 >
                   Verde
                 </span>
               </div>
             </div>
-            <div className="flex flex-1">
-              <div className="h-[100px] overflow-hidden">
-                <div className="subtitle text-white uppercase max-w-[200px] opacity-0">
-                  Sostenibilidad cool Sostenibilidad cool Sostenibilidad cool
+            <div className="flex flex-row justify-between items-center flex-1">
+              <div className="flex h-[100px] overflow-hidden ">
+                <span className="subtitle uppercase text-justify max-w-[210px] opacity-0">
+                  Ideas, soluciones y “jajajaj”s para un mundo mejor 🍃
+                </span>
+              </div>
+              <div className="overflow-hidden">
+                <div className="bottom-circle opacity-0 scale-0">
+                  <AnimatedCircle />
                 </div>
               </div>
             </div>
