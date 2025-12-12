@@ -10,7 +10,7 @@ export default function AnimatedCircle() {
 
   useGSAP(() => {
     gsap.to(".animated-circle", {
-      rotation: 360,
+      rotation: -360,
       duration: 20, // speed
       ease: "none",
       repeat: -1, // infinite
