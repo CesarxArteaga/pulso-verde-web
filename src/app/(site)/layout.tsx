@@ -6,9 +6,19 @@ import localFont from "next/font/local";
 const causten = localFont({
   src: [
     {
+      path: "../../../public/fonts/causten/Causten-Light.otf",
+      weight: "300",
+      style: "light",
+    },
+    {
       path: "../../../public/fonts/causten/Causten-Regular.otf",
       weight: "400",
       style: "normal",
+    },
+    {
+      path: "../../../public/fonts/causten/Causten-ExtraBold.otf",
+      weight: "800",
+      style: "extrabold",
     },
   ],
   variable: "--font-causten",

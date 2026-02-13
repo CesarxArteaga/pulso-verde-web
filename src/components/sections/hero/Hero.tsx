@@ -85,22 +85,47 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  useGSAP(() => {
+    gsap.to(".slider", {
+      opacity: 1,
+      scale: 1,
+      delay: 0.6,
+      ease: "circ.inOut",
+    });
+
+    gsap.to(".hero-text", {
+      opacity: 1,
+      delay: 0.6,
+    });
+  }, []);
+
   return (
-    <div className="hero-bg">
-      <div className="place-content-center">
-        <div className="grid grid-cols-2">
-          <div>
-            <p className="text-white font-[800] uppercase text-[50px]">
-              Transformamos la sostenibilidad en entretenimiento
-            </p>
-          </div>
-          <div>
-            <div className="slider" ref={container}>
-              {[1, 2, 3, 1, 2, 3].map((n, i) => (
-                <div className="slide" key={i}>
-                  <img src={`/assets/images/slide/${n}.png`} alt="" />
-                </div>
-              ))}
+    <div className="hero-bg flex justify-center">
+      <div className="max-w-[1200px] flex">
+        <div className="place-content-center">
+          <div className="grid grid-cols-2">
+            <div className="pl-6">
+              <br />
+              <br />
+              <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase text-[55px] leading-none">
+                Transformamos la sostenibilidad en entretenimiento
+              </p>
+              <br />
+              <br />
+              <p className="hero-text opacity-0  text-white font-[300] text-[25px] leading-none">
+                Nuestro propósito es: <br />
+                Agitar conciencias para convertirlas en acciones de
+                sostenibilidad
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="slider opacity-0 scale-0" ref={container}>
+                {[1, 2, 3, 1, 2, 3].map((n, i) => (
+                  <div className="slide" key={i}>
+                    <img src={`/assets/images/slide/${n}.png`} alt="" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

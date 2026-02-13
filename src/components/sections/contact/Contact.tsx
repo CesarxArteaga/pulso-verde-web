@@ -3,7 +3,7 @@ import Button from "../../ui/button/Button";
 export default function Contact() {
   return (
     <div className="flex justify-center bg-primary text-white">
-      <div className="flex flex-1 flex-row max-w-[1100px] pt-12 pb-12">
+      {/* <div className="flex flex-1 flex-row max-w-[1100px] pt-12 pb-12">
         <div className="flex flex-col flex-1">
           <div className="p-6">
             <h2 className="text-[70px]">Conversemos</h2>
@@ -73,7 +73,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

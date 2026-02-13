@@ -3,7 +3,7 @@ import { gsap, useGSAP } from "@/src/lib/gsap";
 
 const resizableBoxClassname = "resizable-box w-[40px] h-[110px] ";
 
-const menuItems = ["Inicio", "Contenido", "Equipo", "Contacto"];
+const menuItems = ["Home", "Creamos Contigo", "Pulshow", "Contáctanos"];
 
 export default function Navbar() {
   useGSAP(() => {
@@ -17,30 +17,42 @@ export default function Navbar() {
       {
         y: 0,
         opacity: 1,
-        delay: 1.1,
+        delay: 0.5,
         ease: "circ.out",
         stagger: {
-          each: 0.3, // <-- one finishes before next starts
+          each: 0.2, // <-- one finishes before next starts
         },
-      }
+      },
     );
   }, []);
 
   return (
     <div className="flex top-0 left-0 right-0 absolute justify-center">
-      <div className="min-w-[800px] w-[1100px] max-w-[1200px] flex items-center justify-between h-[60px] overflow-hidden">
+      <div className="py-2 min-w-[1200px] w-[1100px] max-w-[1200px] flex items-center justify-between overflow-hidden">
         <div className="flex">
           <img
             src={"/assets/logos/pulso-verde-blanco-x1.png"}
-            className="ani h-[50px] opacity-0"
+            className="ani h-[60px] opacity-0"
           />
         </div>
 
-        <div className="text-white flex w-[300px] justify-between">
+        {/* <div className="text-white flex w-[300px] justify-between">
           {menuItems.map((menu) => (
             <div key={menu} className="flex">
-              <span className="ani opacity-0">{menu}</span>
+              <span className="ani opacity-0 text-[20px]">{menu}</span>
             </div>
+          ))}
+        </div> */}
+
+        <div className="grid grid-cols-4 gap-2">
+          {menuItems.map((menu) => (
+            <a
+              className="ani opacity-0 text-center text-[16px] text-white uppercase"
+              key={menu}
+              href="#"
+            >
+              {menu}
+            </a>
           ))}
         </div>
       </div>
