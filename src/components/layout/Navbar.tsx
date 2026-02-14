@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="grid grid-cols-4 gap-2">
           {menuItems.map((menu) => (
             <a
-              className="ani opacity-0 text-center text-[16px] text-white uppercase"
+              className="ani opacity-0 text-center text-[16px] text-white uppercase font-[400]"
               key={menu}
               href="#"
             >

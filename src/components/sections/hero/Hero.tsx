@@ -2,6 +2,7 @@
 import { gsap, useGSAP } from "@/src/lib/gsap";
 import AnimatedCircle from "./AnimatedCircle";
 import { useRef, useState } from "react";
+import CounterStats from "./CounterStats";
 
 export default function Hero() {
   const container = useRef(null);
@@ -128,6 +129,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+          <CounterStats />
         </div>
       </div>
     </div>
