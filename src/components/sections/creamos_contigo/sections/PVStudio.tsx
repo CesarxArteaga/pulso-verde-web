@@ -36,7 +36,6 @@ export default function PVStudio() {
 
   return (
     <div className="flex justify-center bg-slate-50">
-      
       <div className="max-w-[1200px]">
         <img
           className="w-[220px]"
@@ -59,7 +58,7 @@ export default function PVStudio() {
               </div>
               <div className="absolute translate-y-[180px] translate-x-[270px]">
                 <img
-                  className="h-[400px]"
+                  className="h-[380px]"
                   src="/assets/images/pv_studio_2.png"
                   alt="pv2"
                 />
@@ -67,19 +66,19 @@ export default function PVStudio() {
             </div>
           </div>
           <div className="p-4">
-            <p className="uppercase text-[40px] leading-none font-[800]">
+            <p className="uppercase text-[40px] leading-none font-[800] color-primary">
               SOMOS UN ESTUDIO CREATIVO EXPERTO EN SOSTENIBILIDAD
             </p>
             <br />
-            <p className="uppercase text-[30px] leading-none">
-              que produce contenido original y entretenido con el que la
+            <p className="font-[300] text-[30px] leading-none text-slate-700">
+              Producimos contenido original y entretenido con el que la
               audiencia se identifica fácilmente y la motiva a tomar acción.
             </p>
             <br />
             <br />
             <br />
             <br />
-            <p className="text-[18px]">
+            <p className="text-[20px] text-slate-700 font-[300]">
               Estas son algunas de las empresas que confían en nosotros
             </p>
             <br />
@@ -106,6 +105,8 @@ export default function PVStudio() {
             </p>
           </div>
         </div>
+        <br />
+        <br />
       </div>
     </div>
   );
