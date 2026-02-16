@@ -1,6 +1,7 @@
 import CasosExito from "./sections/CasosExito";
 import PVStudio from "./sections/PVStudio";
 import QuieresResumen from "./sections/QuieresResument";
+import Testimonios from "./sections/Testimonios";
 
 export default function CreamosContigo() {
   return (
@@ -8,6 +9,7 @@ export default function CreamosContigo() {
       <QuieresResumen />
       <PVStudio />
       <CasosExito />
+      <Testimonios />
     </div>
   );
 }
