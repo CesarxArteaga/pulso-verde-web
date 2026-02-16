@@ -62,7 +62,7 @@ export default function QuieresResumen() {
 
   return (
     <div className="flex justify-center bg-slate-50">
-      <div className="max-w-[1200px]">
+      <div className="max-w-[1200px] p-6">
         <br />
         <br />
         <p className="color-terciary uppercase text-[40px] font-[800]">

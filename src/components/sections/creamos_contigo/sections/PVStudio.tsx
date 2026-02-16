@@ -36,7 +36,7 @@ export default function PVStudio() {
 
   return (
     <div className="flex justify-center bg-slate-50">
-      <div className="max-w-[1200px]">
+      <div className="max-w-[1200px] p-6">
         <img
           className="w-[220px]"
           src="/assets/images/pv_studio.png"
@@ -51,14 +51,14 @@ export default function PVStudio() {
             <div className="relative h-[580px]">
               <div className="absolute">
                 <img
-                  className="h-[350px]"
+                  className="lg:h-[250px]"
                   src="/assets/images/pv_studio_1.png"
                   alt="pv1"
                 />
               </div>
               <div className="absolute translate-y-[180px] translate-x-[270px]">
                 <img
-                  className="h-[380px]"
+                  className="lg:h-[280px]"
                   src="/assets/images/pv_studio_2.png"
                   alt="pv2"
                 />

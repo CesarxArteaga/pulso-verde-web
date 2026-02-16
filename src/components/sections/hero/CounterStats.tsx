@@ -29,11 +29,11 @@ export default function CounterStats() {
   }, []);
 
   return (
-    <div className="counter-section h-[155px] place-content-center">
-      <div className="flex justify-center h-[155px] ">
+    <div className="counter-section h-[155px] place-content-center flex justify-center">
+      <div className="flex justify-center h-[155px] w-[100%]">
         <div className="place-content-center flex flex-1">
-          <div className="counter-wrapper translate-y-[155px]">
-            <div className="grid grid-cols-4 text-center h-[100%] place-content-center">
+          <div className="counter-wrapper translate-y-[155px] flex justify-center">
+            <div className="grid grid-cols-4 text-center h-[100%] place-content-center w-[100%] max-w-[1200px]">
               <div className="item-counter  opacity-0">
                 <center>
                   <PlayCircleIcon

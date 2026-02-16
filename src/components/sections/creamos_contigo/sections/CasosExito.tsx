@@ -4,7 +4,7 @@ import React from "react";
 export default function CasosExito() {
   return (
     <div className="flex justify-center">
-      <div className="w-[100%] max-w-[1200px]">
+      <div className="w-[100%] max-w-[1200px] p-6">
         <div className="">
           <br />
           <h2 className="uppercase color-terciary font-[800] text-[40px]">

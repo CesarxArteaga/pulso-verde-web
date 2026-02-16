@@ -108,7 +108,7 @@ export default function Hero() {
             <div className="pl-6">
               <br />
               <br />
-              <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase text-[55px] leading-none">
+              <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase lg:text-[40px] xl:text-[45px] text-[55px] leading-none">
                 Transformamos la sostenibilidad en entretenimiento
               </p>
               <br />
@@ -120,9 +120,15 @@ export default function Hero() {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="slider opacity-0 scale-0" ref={container}>
+              <div
+                className="slider lg:w-[100%] lg:h-[400px] opacity-0 scale-0"
+                ref={container}
+              >
                 {[1, 2, 3, 1, 2, 3].map((n, i) => (
-                  <div className="slide" key={i}>
+                  <div
+                    className="slide lg:w-[200px] h-[300px] xl:w-[300px] xl:h-[400px]"
+                    key={i}
+                  >
                     <img src={`/assets/images/slide/${n}.png`} alt="" />
                   </div>
                 ))}

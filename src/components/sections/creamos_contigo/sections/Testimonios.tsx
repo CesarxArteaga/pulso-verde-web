@@ -8,7 +8,7 @@ export default function Testimonios() {
   const sliderRef = useRef<CustomSliderRef>(null);
   return (
     <div className="flex justify-center">
-      <div className="max-w-[1200px] w-[100%]">
+      <div className="max-w-[1200px] w-[100%] p-6">
         <div>
           <p className="uppercase text-[40px] text-slate-800 font-[800]">
             Testimonios

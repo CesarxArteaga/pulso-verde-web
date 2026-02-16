@@ -27,23 +27,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="flex top-0 left-0 right-0 absolute justify-center">
-      <div className="py-2 min-w-[1200px] w-[1100px] max-w-[1200px] flex items-center justify-between overflow-hidden">
-        <div className="flex">
+    <div className="top-0 left-0 right-0 absolute flex justify-center ">
+      <div className="py-2 max-w-[1200px] flex items-center xl:justify-between overflow-hidden">
+        <div className="flex pl-4">
           <img
             src={"/assets/logos/pulso-verde-blanco-x1.png"}
             className="ani h-[60px] opacity-0"
           />
         </div>
-
-        {/* <div className="text-white flex w-[300px] justify-between">
-          {menuItems.map((menu) => (
-            <div key={menu} className="flex">
-              <span className="ani opacity-0 text-[20px]">{menu}</span>
-            </div>
-          ))}
-        </div> */}
-
+        <div className="lg:w-[50px]"></div>
         <div className="grid grid-cols-4 gap-2">
           {menuItems.map((menu) => (
             <a
