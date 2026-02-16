@@ -75,7 +75,7 @@ export default function QuieresResumen() {
         <div ref={containerRef} className=" cursor-none overflow-hidden">
           <div
             ref={followerRef}
-            className="absolute w-[100px] h-[100px] bg-secondary"
+            className="absolute w-[100px] h-[100px] bg-terciary"
             style={{
               borderRadius: "50%",
               pointerEvents: "none",
@@ -84,8 +84,10 @@ export default function QuieresResumen() {
               zIndex: 100,
             }}
           >
-            <div className="flex flex-1 justify-center">
-              <span>PLAY</span>
+            <div className="flex flex-col h-[100%] justify-center items-center">
+              <center>
+                <span className="font-[800]">PLAY</span>
+              </center>
             </div>
           </div>
           <img

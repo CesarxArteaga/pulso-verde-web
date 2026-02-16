@@ -1,32 +1,90 @@
 import { gsap, useGSAP } from "@/src/lib/gsap";
-import CounterNumber from "../../ui/counter/CounterNumber";
+import AnimatedCounter from "../../ui/counter/AnimatedCounter";
+import {
+  ChartBarIcon,
+  PlayCircleIcon,
+  StarIcon,
+  UsersIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 export default function CounterStats() {
   useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.to(".counter-wrapper", {
-      y: 25,
-      delay: 1.6,
-      ease: "power2.out",
-    }).to(".counter-wrapper", {
       y: 0,
-      borderRadius: 0,
-      width: "100%",
-      height: "100%",
-      duration: 0.8,
-      ease: "back.out(1.7)",
-    });
+      delay: 1.6,
+      ease: "power2.inOut",
+    })
+      .to(".counter-wrapper", {
+        borderRadius: 0,
+        width: "100%",
+        height: "100%",
+        duration: 0.8,
+        ease: "elastic.out",
+      })
+      .to(".item-counter", {
+        opacity: 1,
+      });
   }, []);
 
   return (
-    <div className="counter-section h-[100px] place-content-center ">
-      <div className="flex justify-center h-[100px] ">
+    <div className="counter-section h-[155px] place-content-center">
+      <div className="flex justify-center h-[155px] ">
         <div className="place-content-center flex flex-1">
-          <div className="counter-wrapper translate-y-[105px]">
-            <div className="grid grid-cols-2">
-              <div>
-                <CounterNumber max={100} duration={2} />
+          <div className="counter-wrapper translate-y-[155px]">
+            <div className="grid grid-cols-4 text-center h-[100%] place-content-center">
+              <div className="item-counter  opacity-0">
+                <center>
+                  <PlayCircleIcon
+                    weight="fill"
+                    size={40}
+                    className="color-terciary"
+                  />
+                </center>
+                <p className="text-[40px] font-[800] leading-none">
+                  <AnimatedCounter max={3800000} delay={3} />
+                </p>
+                <small>Views</small>
+              </div>
+              <div className="item-counter opacity-0">
+                <center>
+                  <StarIcon
+                    weight="fill"
+                    size={40}
+                    className="color-terciary"
+                  />
+                </center>
+                <p className="text-[40px] font-[800] leading-none">
+                  <AnimatedCounter max={18.9} isPercentage delay={3} />
+                </p>
+                <small>Engagement</small>
+              </div>
+              <div className="item-counter opacity-0">
+                <center>
+                  <ChartBarIcon
+                    weight="fill"
+                    size={40}
+                    className="color-terciary"
+                  />
+                </center>
+                <p className="text-[40px] font-[800] leading-none">
+                  <AnimatedCounter max={716.123} decimals={3} delay={3} />
+                </p>{" "}
+                <small className="leading-none">Reach</small>
+              </div>
+              <div className="item-counter opacity-0">
+                <center>
+                  <UsersIcon
+                    weight="fill"
+                    size={40}
+                    className="color-terciary"
+                  />
+                </center>
+                <p className="text-[40px] font-[800] leading-none">
+                  <AnimatedCounter max={75} isPercentage delay={3} />
+                </p>{" "}
+                <small className="leading-none">Users</small>
               </div>
             </div>
           </div>
