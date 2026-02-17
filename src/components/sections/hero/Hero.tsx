@@ -101,7 +101,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero-bg flex justify-center">
+    <div className="hero-bg min-h-[920px] flex justify-center">
       <div className="max-w-[1200px] flex">
         <div className="place-content-center">
           <div className="grid grid-cols-2">

@@ -14,14 +14,15 @@ export default function CounterStats() {
     tl.to(".counter-wrapper", {
       y: 0,
       delay: 1.6,
-      ease: "power2.inOut",
+      duration: 0.2,
+      ease: "expo.inOut",
     })
       .to(".counter-wrapper", {
         borderRadius: 0,
         width: "100%",
         height: "100%",
-        duration: 0.8,
-        ease: "elastic.out",
+        duration: 0.4,
+        ease: "expo.inOut",
       })
       .to(".item-counter", {
         opacity: 1,
@@ -43,7 +44,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={3800000} delay={3} />
+                  <AnimatedCounter max={3800000} delay={2.3} />
                 </p>
                 <small>Views</small>
               </div>
@@ -56,7 +57,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={18.9} isPercentage delay={3} />
+                  <AnimatedCounter max={18.9} isPercentage delay={2.3} />
                 </p>
                 <small>Engagement</small>
               </div>
@@ -69,7 +70,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={716.123} decimals={3} delay={3} />
+                  <AnimatedCounter max={716.123} decimals={3} delay={2.3} />
                 </p>{" "}
                 <small className="leading-none">Reach</small>
               </div>
@@ -82,7 +83,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={75} isPercentage delay={3} />
+                  <AnimatedCounter max={75} isPercentage delay={2.3} />
                 </p>{" "}
                 <small className="leading-none">Users</small>
               </div>

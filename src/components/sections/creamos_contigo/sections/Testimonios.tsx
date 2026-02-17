@@ -85,7 +85,7 @@ const Card = React.memo(
     <div className="p-4">
       <div className="flex flex-col flex-1 bg-slate-100 min-h-[300px] rounded-4xl">
         <div className="p-12">
-          <p className="text-[24px] italic text-slate-600">"{coment}"</p>
+          <p className="text-[24px] italic text-slate-500 leading-none">"{coment}"</p>
         </div>
         <div className="flex px-12 mb-10">
           <div className="h-[100px] w-[100px] rounded-[60px] overflow-hidden">
@@ -99,8 +99,8 @@ const Card = React.memo(
             />
           </div>
           <div className="pl-4">
-            <p className="text-[24px] text-slate-700">{name}</p>
-            <p className="text-[18px] text-slate-500">{position}</p>
+            <p className="text-[24px] text-slate-700 leading-none">{name}</p>
+            <p className="text-[18px] text-slate-600">{position}</p>
           </div>
         </div>
       </div>

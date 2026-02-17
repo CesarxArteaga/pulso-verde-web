@@ -131,7 +131,7 @@ export default function PulsoShow() {
               Mira por ti mismo el trailer de nuestra última temporada
             </p>
           </div>
-          <div className="p-8">
+          <div className="p-8 mb-12">
             <div ref={containerRef} className=" cursor-none overflow-hidden">
               <div
                 ref={followerRef}
