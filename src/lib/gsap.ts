@@ -1,8 +1,10 @@
 export * from "gsap";
 export * from "@gsap/react";
 export * from "gsap/Draggable";
+export * from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/Draggable";
 import { gsap } from "gsap";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
-gsap.registerPlugin(useGSAP, Draggable, InertiaPlugin);
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP, Draggable, InertiaPlugin, ScrollTrigger);
