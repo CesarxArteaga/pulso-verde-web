@@ -50,7 +50,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.counter-section {
+/* .counter-section {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -63,7 +63,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 10px;
-}
+} */
 
 .ellipse-follower {
   position: absolute;

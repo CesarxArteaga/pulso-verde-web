@@ -15,31 +15,6 @@ export default function Hero() {
   ];
 
   useGSAP(() => {
-    //   const tl = gsap.timeline();
-
-    //   tl.fromTo(
-    //     ".animated-text",
-    //     {
-    //       y: 200,
-    //     },
-    //     { y: 0, ease: "circ.out", opacity: 1 }
-    //   );
-
-    //   gsap.fromTo(
-    //     ".subtitle",
-    //     {
-    //       y: 200,
-    //     },
-    //     { y: 0, opacity: 1, delay: 0.8, duration: 0.6, ease: "circ.out" }
-    //   );
-
-    //   gsap.to(".bottom-circle", {
-    //     delay: 1.2,
-    //     opacity: 1,
-    //     scale: 1,
-    //     ease: "expo.out",
-    //   });
-
     const elements = gsap.utils.toArray(".slide");
 
     elements.forEach((card: any, i) => {
@@ -101,43 +76,36 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero-bg min-h-[920px] flex justify-center">
-      <div className="max-w-[1200px] flex">
-        <div className="place-content-center">
-          <div className="grid grid-cols-2">
-            <div className="pl-6">
-              <br />
-              <br />
-              <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase lg:text-[40px] xl:text-[45px] text-[55px] leading-none">
-                Transformamos la sostenibilidad en entretenimiento
-              </p>
-              <br />
-              <br />
-              <p className="hero-text opacity-0  text-white font-[300] text-[25px] leading-none">
-                Nuestro propósito es: <br />
-                Agitar conciencias para convertirlas en acciones de
-                sostenibilidad
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <div
-                className="slider lg:w-[100%] lg:h-[400px] opacity-0 scale-0"
-                ref={container}
-              >
-                {[1, 2, 3, 1, 2, 3].map((n, i) => (
-                  <div
-                    className="slide lg:w-[200px] h-[300px] xl:w-[300px] xl:h-[400px]"
-                    key={i}
-                  >
-                    <img src={`/assets/images/slide/${n}.png`} alt="" />
-                  </div>
-                ))}
-              </div>
+    <div className="hero-bg flex flex-col items-center">
+      <div className="w-[100%] max-w-[1200px] flex">
+        <div className="grid grid-cols-2 h-[700px]">
+          <div className="flex flex-col place-content-center">
+            <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase lg:text-[40px] xl:text-[45px] text-[55px] leading-none">
+              Transformamos la sostenibilidad en entretenimiento
+            </p>
+            <p className="hero-text pt-8 opacity-0 text-white font-[300] text-[25px] leading-none">
+              Nuestro propósito es: Agitar conciencias para convertirlas en
+              acciones de sostenibilidad
+            </p>
+          </div>
+          <div className="flex flex-col place-content-center">
+            <div
+              className="slider lg:w-[100%] lg:h-[400px] opacity-0 scale-0"
+              ref={container}
+            >
+              {[1, 2, 3, 1, 2, 3].map((n, i) => (
+                <div
+                  className="slide lg:w-[200px] h-[300px] xl:w-[300px] xl:h-[400px]"
+                  key={i}
+                >
+                  <img src={`/assets/images/slide/${n}.png`} alt="" />
+                </div>
+              ))}
             </div>
           </div>
-          <CounterStats />
         </div>
       </div>
+      <CounterStats />
     </div>
   );
 }
