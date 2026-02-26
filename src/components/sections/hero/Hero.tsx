@@ -1,6 +1,5 @@
 "use client";
 import { gsap, useGSAP } from "@/src/lib/gsap";
-import AnimatedCircle from "./AnimatedCircle";
 import { useRef, useState } from "react";
 import CounterStats from "./CounterStats";
 
@@ -77,9 +76,10 @@ export default function Hero() {
 
   return (
     <div className="hero-bg flex flex-col items-center">
+      <div className="h-[75px]" />
       <div className="w-[100%] max-w-[1200px] flex">
-        <div className="grid grid-cols-2 h-[700px]">
-          <div className="flex flex-col place-content-center">
+        <div className="grid grid-cols-2 h-[630px]">
+          <div className="flex flex-col place-content-center px-8">
             <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase lg:text-[40px] xl:text-[45px] text-[55px] leading-none">
               Transformamos la sostenibilidad en entretenimiento
             </p>
@@ -95,7 +95,7 @@ export default function Hero() {
             >
               {[1, 2, 3, 1, 2, 3].map((n, i) => (
                 <div
-                  className="slide lg:w-[200px] h-[300px] xl:w-[300px] xl:h-[400px]"
+                  className="slide  lg:w-[240px] lg:h-[410px] xl:w-[300px] xl:h-[440px]"
                   key={i}
                 >
                   <img src={`/assets/images/slide/${n}.png`} alt="" />

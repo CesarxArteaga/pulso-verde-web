@@ -55,7 +55,7 @@ export default function PVStudio() {
       <div className="max-w-[1200px]">
         <div
           ref={container}
-          className="min-h-screen flex items-center justify-center overflow-hidden"
+          className="min-h-screen flex items-center justify-center overflow-hidden px-8"
         >
           <div className="columns-2 gap-10 space-y-8">
             <div className="gallery-image">

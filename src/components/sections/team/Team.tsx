@@ -6,33 +6,33 @@ export default function Team() {
   const team = [
     {
       id: 1,
-      name: "Luis Muñoz",
-      img: "https://media.istockphoto.com/id/1389823037/vector/young-smiling-woman-mia-avatar-3d-vector-people-character-illustration-cartoon-minimal-style.jpg?s=612x612&w=0&k=20&c=ciwsDqBIy3mcTxhWN4I1S-kKSTvjoN1einMrQawNZDQ=",
+      name: "Daniel Rivera",
+      title: "CEO",
+      img: "/assets/images/team/daniel.jpeg",
     },
     {
       id: 2,
-      name: "Luis Muñoz",
-      img: "https://media.istockphoto.com/id/1389823037/vector/young-smiling-woman-mia-avatar-3d-vector-people-character-illustration-cartoon-minimal-style.jpg?s=612x612&w=0&k=20&c=ciwsDqBIy3mcTxhWN4I1S-kKSTvjoN1einMrQawNZDQ=",
+      name: "Caio Nevez",
+      title: "Investigador y manager de proyectos",
+      img: "/assets/images/team/caio.jpeg",
     },
     {
       id: 3,
-      name: "Luis Muñoz",
-      img: "https://media.istockphoto.com/id/1389823037/vector/young-smiling-woman-mia-avatar-3d-vector-people-character-illustration-cartoon-minimal-style.jpg?s=612x612&w=0&k=20&c=ciwsDqBIy3mcTxhWN4I1S-kKSTvjoN1einMrQawNZDQ=",
+      name: "Xavier Rivera",
+      title: "Gerente de finanzas y estrategia",
+      img: "/assets/images/team/xavier.jpeg",
     },
     {
       id: 4,
-      name: "Luis Muñoz",
-      img: "https://media.istockphoto.com/id/1389823037/vector/young-smiling-woman-mia-avatar-3d-vector-people-character-illustration-cartoon-minimal-style.jpg?s=612x612&w=0&k=20&c=ciwsDqBIy3mcTxhWN4I1S-kKSTvjoN1einMrQawNZDQ=",
+      name: "Cesar Viera",
+      title: "Gerente de Innovación",
+      img: "/assets/images/team/cesar.jpeg",
     },
     {
       id: 5,
-      name: "Luis Muñoz",
-      img: "https://media.istockphoto.com/id/1389823037/vector/young-smiling-woman-mia-avatar-3d-vector-people-character-illustration-cartoon-minimal-style.jpg?s=612x612&w=0&k=20&c=ciwsDqBIy3mcTxhWN4I1S-kKSTvjoN1einMrQawNZDQ=",
-    },
-    {
-      id: 6,
-      name: "Luis Muñoz",
-      img: "https://media.istockphoto.com/id/1389823037/vector/young-smiling-woman-mia-avatar-3d-vector-people-character-illustration-cartoon-minimal-style.jpg?s=612x612&w=0&k=20&c=ciwsDqBIy3mcTxhWN4I1S-kKSTvjoN1einMrQawNZDQ=",
+      name: "Nabil España",
+      title: "Manager de producción",
+      img: "/assets/images/team/nabil.jpeg",
     },
   ];
 
@@ -98,25 +98,37 @@ export default function Team() {
         ease: "power3.inOut",
         stagger: 0.08,
       });
+
+      tl.to(".member-info", {
+        height: "auto",
+        ease: "circ.inOut",
+      });
     }, container);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="flex justify-center bg-primary">
+    <div className="flex justify-center bg-primary py-10">
       <div className="w-[100%] max-w-[1200px] flex flex-col justify-center min-h-[500px]">
         <div className="flex justify-center pb-[40px]">
-          <div className="bg-secondary px-4 py-1 rotate-[-2deg]">
-            <p className="text-white text-[40px] font-[800] leading-none rotate-[1deg]">El Dream Team</p>
+          <div className="bg-secondary px-4 py-2 rotate-[-3deg] ">
+            <p className="text-white text-[40px] font-[800] leading-none rotate-[2deg]">
+              El Dream Team
+            </p>
           </div>
         </div>
         <div
           ref={container}
-          className=" h-[200px] relative flex flex-wrap justify-between gap-4 w-full max-w-4xl mx-auto overflow-hidden"
+          className="w-[100%] h-[auto] relative flex flex-wrap justify-between gap-4 w-full max-w-4xl mx-auto overflow-hidden"
         >
           {team.map((member) => (
-            <Member key={member.id} img={member.img} name={member.name} />
+            <Member
+              key={member.id}
+              img={member.img}
+              name={member.name}
+              title={member.title}
+            />
           ))}
         </div>
       </div>
@@ -124,28 +136,34 @@ export default function Team() {
   );
 }
 
-const Member = React.memo(({ img, name }: { img: string; name: string }) => {
-  useGSAP(() => {
-    gsap.to(".name-wrapper", {
-      height: 100,
-      delay: 3.5,
-      duration: 1,
-      ease: "circ.inOut",
-    });
-  }, []);
+const Member = React.memo(
+  ({ img, name, title }: { img: string; name: string; title: string }) => {
+    useGSAP(() => {
+      gsap.to(".name-wrapper", {
+        height: 100,
+        delay: 3.5,
+        opacity: 1,
+        duration: 1,
+        ease: "circ.inOut",
+      });
+    }, []);
 
-  return (
-    <div className="flex flex-col">
-      <div className=" opacity-0 photo h-[130px] w-[130px] rounded-[100px] border border-[6px] color-terciary overflow-hidden">
-        <img
-          className="h-[100%] w-[100%] object-cover scale-[1.3]"
-          src={img}
-          alt="member"
-        />
+    return (
+      <div className="flex flex-col">
+        <div className=" opacity-0 photo h-[160px] w-[160px] rounded-[100px] border border-[6px] color-terciary overflow-hidden">
+          <img
+            className="h-[100%] w-[100%] object-cover scale-[1.3]"
+            src={img}
+            alt="member"
+          />
+        </div>
+        <div className="member-info overflow-hidden h-[0px]">
+          <p className="text-center text-[20px] mt-2 text-white ">{name}</p>
+          <p className="uppercase text-white text-center font-[800] max-w-[150px]">
+            {title}
+          </p>
+        </div>
       </div>
-      <div className="name-wrapper overflow-hidden h-[0px]">
-        <p className="text-center mt-2 text-white ">{name}</p>
-      </div>
-    </div>
-  );
-});
+    );
+  },
+);

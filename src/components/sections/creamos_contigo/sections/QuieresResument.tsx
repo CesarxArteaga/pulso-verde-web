@@ -96,8 +96,6 @@ export default function QuieresResumen() {
             alt="video_1"
           />
         </div>
-        <br />
-        <br />
       </div>
     </div>
   );

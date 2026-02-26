@@ -13,7 +13,7 @@ export default function CounterStats() {
 
     tl.to(".counter-wrapper", {
       y: 0,
-      delay: 1.6,
+      delay: 0.6,
       duration: 0.2,
       ease: "expo.inOut",
     })
@@ -33,6 +33,8 @@ export default function CounterStats() {
       });
   }, []);
 
+  const delayCount = 1.3;
+
   return (
     <div className="bg-white w-[100%] place-content-center flex justify-center py-8">
       <div className="flex justify-center w-[100%]">
@@ -48,7 +50,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={3800000} delay={2.3} />
+                  <AnimatedCounter max={3800000} delay={delayCount} />
                 </p>
                 <small>Views</small>
               </div>
@@ -61,7 +63,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={18.9} isPercentage delay={2.3} />
+                  <AnimatedCounter max={18.9} isPercentage delay={delayCount} />
                 </p>
                 <small>Engagement</small>
               </div>
@@ -74,7 +76,11 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={716.123} decimals={3} delay={2.3} />
+                  <AnimatedCounter
+                    max={716.123}
+                    decimals={3}
+                    delay={delayCount}
+                  />
                 </p>{" "}
                 <small className="leading-none">Reach</small>
               </div>
@@ -87,7 +93,7 @@ export default function CounterStats() {
                   />
                 </center>
                 <p className="text-[40px] font-[800] leading-none">
-                  <AnimatedCounter max={75} isPercentage delay={2.3} />
+                  <AnimatedCounter max={75} isPercentage delay={delayCount} />
                 </p>{" "}
                 <small className="leading-none">Users</small>
               </div>
