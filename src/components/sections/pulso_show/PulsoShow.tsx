@@ -62,11 +62,62 @@ export default function PulsoShow() {
 
   const [isPlayingVideo, setIsPlayingVideo] = useState(false);
 
+  useGSAP(() => {
+    if (!window) return;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".container-pulso-show",
+        pin: true,
+        start: "top top",
+        end: "+=200%",
+        scrub: true,
+      },
+    });
+
+    tl.fromTo(
+      ".pulso-show-banner",
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        ease: "power1.inOut",
+        duration: 1,
+      },
+    )
+      .fromTo(
+        ".pulso-show-text",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        { y: 0, opacity: 1, ease: "power1.inOut" },
+      )
+      .fromTo(
+        ".pulso-show-image",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        { y: 0, opacity: 1, ease: "power1.inOut" },
+      )
+      .fromTo(
+        ".pulso-show-text-2",
+        {
+          y: 100,
+          opacity: 0,
+        },
+        { y: 0, opacity: 1, ease: "power1.inOut" },
+      );
+  }, []);
+
   return (
-    <div className="flex justify-center bg-primary">
+    <div className="flex justify-center bg-primary container-pulso-show">
       <div className="max-w-[1200px]">
         <div className="py-[150px] flex flex-col justify-center items-center">
-          <div className="flex flex-col items-center">
+          <div className="pulso-show-banner flex flex-col items-center">
             <div className="w-[500px] h-[200px]">
               <img
                 className="w-[100%] h-[100%] object-cover"
@@ -90,14 +141,14 @@ export default function PulsoShow() {
         </div>
         <div className="flex flex-col items-center">
           <div className="max-w-[800px] mb-[80px]">
-            <p className="text-white text-[24px] text-justify leading-none">
+            <p className="pulso-show-text text-white text-[24px] text-justify leading-none">
               El Pulshow es el espacio perfecto para que la gente vea tu marca.
               Combinamos sostenibilidad y entretenimiento en un show
               revolucionario. Tu marca no interrumpe, se fusiona con los
               talentos y la temáticas.
             </p>
           </div>
-          <div className="w-[100%] h-[100%]">
+          <div className="pulso-show-image w-[100%] h-[100%]">
             <img
               className="w-[100%] h-[100%] object-cover"
               src="/assets/images/pulso_show_1.png"
@@ -108,7 +159,7 @@ export default function PulsoShow() {
         <div>
           <div className="py-[150px] flex flex-col justify-center">
             <div className="flex flex-1 pb-[150px]">
-              <p className="flex flex-1 justify-center text-white text-[26px] italic">
+              <p className="pulso-show-text-2 flex flex-1 justify-center text-white text-[26px] italic">
                 “El único show que la audiencia quiere más cortes comerciales”
               </p>
             </div>
@@ -178,7 +229,9 @@ export default function PulsoShow() {
             )}
           </div>
           <div className="flex flex-col items-center m-4 mb-[60px]">
-            <p  className="text-white text-[20px] py-[20px]">Descubre más contenido en nuestro canal de YouTube</p>
+            <p className="text-white text-[20px] py-[20px]">
+              Descubre más contenido en nuestro canal de YouTube
+            </p>
             <a href="https://www.youtube.com/@pulso__verde" target="_blank">
               <div className="w-[550px] h-[300px] hover:scale-[1.05] transition delay-100">
                 <img

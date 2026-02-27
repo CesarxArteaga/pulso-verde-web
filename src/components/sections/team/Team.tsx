@@ -70,7 +70,6 @@ export default function Team() {
           start: "top 70%", // when top of section hits 80% of viewport
           toggleActions: "play none none none",
           once: true, // plays only once
-          markers: false, // set true for debugging,
         },
       });
 
@@ -103,6 +102,22 @@ export default function Team() {
         height: "auto",
         ease: "circ.inOut",
       });
+
+      tl.fromTo(
+        ".team-title",
+        {
+          height: 0,
+          opacity: 0,
+          y: 100,
+        },
+        {
+          height: "auto",
+          opacity: 1,
+          y: 0,
+          ease: "power1.inOut",
+          duration: 0.3,
+        },
+      );
     }, container);
 
     return () => ctx.revert();
@@ -110,18 +125,18 @@ export default function Team() {
 
   return (
     <div className="flex justify-center bg-primary py-10">
-      <div className="w-[100%] max-w-[1200px] flex flex-col justify-center min-h-[500px]">
-        <div className="flex justify-center pb-[40px]">
-          <div className="bg-secondary px-4 py-2 rotate-[-3deg] ">
+      <div
+        ref={container}
+        className="w-[100%] max-w-[1200px] flex flex-col justify-center min-h-[500px]"
+      >
+        <div className="flex justify-center mb-8">
+          <div className="team-title bg-secondary px-4 py-2 rotate-[-3deg] ">
             <p className="text-white text-[40px] font-[800] leading-none rotate-[2deg]">
               El Dream Team
             </p>
           </div>
         </div>
-        <div
-          ref={container}
-          className="w-[100%] h-[auto] relative flex flex-wrap justify-between gap-4 w-full max-w-4xl mx-auto overflow-hidden"
-        >
+        <div className="w-[100%] h-[auto] relative flex flex-wrap justify-between gap-4 w-full max-w-4xl mx-auto">
           {team.map((member) => (
             <Member
               key={member.id}
