@@ -6,8 +6,8 @@ import Testimonios from "./sections/Testimonios";
 export default function CreamosContigo() {
   return (
     <div>
-      <QuieresResumen />
       <PVStudio />
+      <QuieresResumen />
       <CasosExito />
       <Testimonios />
     </div>

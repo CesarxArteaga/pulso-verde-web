@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap, useGSAP } from "@/src/lib/gsap";
 
 export default function PulsoShow() {
@@ -60,33 +60,42 @@ export default function PulsoShow() {
     };
   }, []);
 
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
+
   return (
-    <div className="flex justify-center bg-neutral-900">
+    <div className="flex justify-center bg-primary">
       <div className="max-w-[1200px]">
-        <div className="grid grid-cols-2">
-          <div className="px-12">
-            <div className="py-[150px] flex flex-col">
-              <div className="w-[500px] h-[200px]">
+        <div className="py-[150px] flex flex-col justify-center items-center">
+          <div className="flex flex-col items-center">
+            <div className="w-[500px] h-[200px]">
+              <img
+                className="w-[100%] h-[100%] object-cover"
+                src="/assets/images/pulso_show.png"
+                alt="pulso_show"
+              />
+            </div>
+            <div className="bg-secondary px-2 rotate-[-1deg] relative">
+              <span className="text-white text-[22px]">
+                El primer talk show de sostenibilidad en el mundo del mundo
+              </span>
+              <span className="h-[40px] w-[240px] absolute bottom-[-35px] right-[-10px]">
                 <img
                   className="w-[100%] h-[100%] object-cover"
-                  src="/assets/images/pulso_show.png"
-                  alt="pulso_show"
+                  src="/assets/images/lo_googleamos.png"
+                  alt="gogleamos"
                 />
-              </div>
-              <div className="bg-secondary px-2 rotate-[-1deg]">
-                <span className="text-white text-[18px]">
-                  El primer talk show de sostenibilidad en el mundo del mundo
-                </span>
-              </div>
+              </span>
             </div>
-            <div className="pb-[120px]">
-              <p className="text-white text-[20px] leading-none">
-                El Pulshow es el espacio perfecto para que la gente vea tu
-                marca. Combinamos sostenibilidad y entretenimiento en un show
-                revolucionario. Tu marca no interrumpe, se fusiona con los
-                talentos y la temáticas.
-              </p>
-            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="max-w-[800px] mb-[80px]">
+            <p className="text-white text-[24px] text-justify leading-none">
+              El Pulshow es el espacio perfecto para que la gente vea tu marca.
+              Combinamos sostenibilidad y entretenimiento en un show
+              revolucionario. Tu marca no interrumpe, se fusiona con los
+              talentos y la temáticas.
+            </p>
           </div>
           <div className="w-[100%] h-[100%]">
             <img
@@ -103,23 +112,22 @@ export default function PulsoShow() {
                 “El único show que la audiencia quiere más cortes comerciales”
               </p>
             </div>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 gap-8">
               <div className="flex flex-1 justify-center">
-                <div className="w-[470px] h-[290px]">
-                  <img
-                    className="w-[100%] h-[100%] object-cover "
-                    src="/assets/images/pulso_show_3.png"
-                    alt="pulso"
-                  />
+                <div>
+                  <video controls>
+                    <source
+                      src="/assets/videos/interagua.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
                 </div>
               </div>
               <div className="flex flex-1 justify-center">
-                <div className="w-[470px] h-[290px]">
-                  <img
-                    className="w-[100%] h-[100%] object-cover scale-[1.1]"
-                    src="/assets/images/pulso_show_2.png"
-                    alt="pulso"
-                  />
+                <div>
+                  <video controls>
+                    <source src="/assets/videos/marriot.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </div>
             </div>
@@ -132,26 +140,54 @@ export default function PulsoShow() {
             </p>
           </div>
           <div className="p-8 mb-12">
-            <div ref={containerRef} className=" cursor-none overflow-hidden">
-              <div
-                ref={followerRef}
-                className="absolute w-[100px] h-[100px] bg-terciary"
-                style={{
-                  borderRadius: "50%",
-                  pointerEvents: "none",
-                  transform: "translate(-50%, -50%) scale(0)",
-                  opacity: 0,
-                  zIndex: 100,
-                }}
-              >
-                <div className="flex flex-col h-[100%] justify-center items-center">
-                  <center>
-                    <span className="font-[800]">PLAY</span>
-                  </center>
-                </div>
+            {isPlayingVideo ? (
+              <div className="w-[100%] h-[100%]">
+                <video width="100%" height="100%" controls autoPlay>
+                  <source
+                    src="/assets/videos/resumen_temporada_1.mp4"
+                    type="video/mp4"
+                  />
+                </video>
               </div>
-              <img className="hover:scale-[1.05] hover:brightness-50 duration-300 ease-in-out" src="/assets/images/video_2.png" alt="video_2" />
-            </div>
+            ) : (
+              <div ref={containerRef} className=" cursor-none overflow-hidden">
+                <div
+                  ref={followerRef}
+                  className="absolute w-[100px] h-[100px] bg-terciary"
+                  style={{
+                    borderRadius: "50%",
+                    pointerEvents: "none",
+                    transform: "translate(-50%, -50%) scale(0)",
+                    opacity: 0,
+                    zIndex: 100,
+                  }}
+                >
+                  <div className="flex flex-col h-[100%] justify-center items-center">
+                    <center>
+                      <span className="font-[800]">PLAY</span>
+                    </center>
+                  </div>
+                </div>
+                <img
+                  onClick={() => setIsPlayingVideo(true)}
+                  className="hover:scale-[1.05] hover:brightness-50 duration-300 ease-in-out"
+                  src="/assets/images/video_2.png"
+                  alt="video_2"
+                />
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col items-center m-4 mb-[60px]">
+            <p  className="text-white text-[20px] py-[20px]">Descubre más contenido en nuestro canal de YouTube</p>
+            <a href="https://www.youtube.com/@pulso__verde" target="_blank">
+              <div className="w-[550px] h-[300px] hover:scale-[1.05] transition delay-100">
+                <img
+                  className="w-[100%] h-[100%] object-cover"
+                  src="/assets/images/pulso_show_thumb.png"
+                  alt="resumen"
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>
