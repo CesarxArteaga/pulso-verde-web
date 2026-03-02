@@ -120,6 +120,15 @@ export default function PVStudio() {
                   alt="client logo"
                 />
               ))}
+              {/* Duplicate manually */}
+              {[1, 2, 3, 4, 5].map((item) => (
+                <img
+                  key={`logo-dup-dup-${item}`}
+                  className="h-[70px] w-auto brightness-0"
+                  src={`/assets/images/clientes/${item}.png`}
+                  alt="client logo"
+                />
+              ))}
             </div>
           </div>
           <p className="text-[30px] py-10 text-center font-[800]">
