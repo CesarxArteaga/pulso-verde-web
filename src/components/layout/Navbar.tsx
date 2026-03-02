@@ -1,5 +1,6 @@
 "use client";
 import { gsap, useGSAP } from "@/src/lib/gsap";
+import { ListIcon } from "@phosphor-icons/react/dist/ssr";
 
 const menuItems = ["Home", "Creamos Contigo", "Pulshow", "Contáctanos"];
 
@@ -25,8 +26,25 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="top-0 left-0 right-0 absolute flex justify-center ">
-      <div className="py-2 max-w-[1200px] w-[100%] flex items-center xl:justify-between overflow-hidden">
+    <div className="top-0 left-0 right-0 absolute flex justify-center">
+      {/**
+       * Mobile menu
+       */}
+
+      <div className="h-[70px] lg:hidden flex flex-1 justify-between items-center px-4 py-2 sticky">
+        <div className="h-[100%]">
+          <img
+            className="w-[100%] h-[100%] object-cover"
+            src={"/assets/logos/pulso-verde-blanco-x1.png"}
+            alt="logo"
+          />
+        </div>
+        <div>
+          <ListIcon size={40} className="text-white" />
+        </div>
+      </div>
+
+      <div className="hidden lg:flex py-2 max-w-[1200px] w-[100%] flex items-center xl:justify-between overflow-hidden">
         <div className="flex pl-4">
           <img
             src={"/assets/logos/pulso-verde-blanco-x1.png"}
@@ -45,10 +63,6 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-      </div>
-
-      <div>
-        <span></span>
       </div>
     </div>
   );

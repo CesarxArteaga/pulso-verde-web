@@ -38,10 +38,10 @@ export default function CounterStats() {
   return (
     <div className="bg-white w-[100%] place-content-center flex justify-center py-8">
       <div className="flex justify-center w-[100%]">
-        <div className="flex flex-col place-content-center  w-[100%] max-w-[1200px]">
+        <div className="flex flex-col place-content-center w-[100%] max-w-[1200px]">
           <div className="counter-wrapper flex flex-col justify-center">
-            <div className=" grid grid-cols-4 text-center h-[100%] place-content-center">
-              <div className="item-counter  opacity-0">
+            <div className="grid grid-cols-2 md:grid-cols-4 text-center h-[100%] place-content-center">
+              <div className="item-counter opacity-0">
                 <center>
                   <PlayCircleIcon
                     weight="fill"
@@ -99,7 +99,7 @@ export default function CounterStats() {
               </div>
             </div>
             <div className="flex justify-center">
-              <p className="legend pt-4 text-[20px] text-neutral-800 opacity-0">
+              <p className="legend px-4 text-center pt-4 text-[20px] text-neutral-800 opacity-0">
                 Somos un hub de entretenimiento que usa el humor para agitar
                 conciencias y convertirlas en acciones de sostenibilidad
               </p>
