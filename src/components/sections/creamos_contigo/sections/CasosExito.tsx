@@ -2,7 +2,7 @@ import CustomSlider from "@/src/components/ui/slider/CustomSlider";
 import React from "react";
 
 export default function CasosExito() {
-  const showOneSlide = window.innerWidth < 768;
+  const showOneSlide = window?.innerWidth < 768;
 
   return (
     <div className="flex justify-center">

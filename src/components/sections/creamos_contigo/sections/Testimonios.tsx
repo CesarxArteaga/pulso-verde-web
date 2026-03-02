@@ -6,7 +6,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 export default function Testimonios() {
 
-  const showOneSlide = window.innerWidth < 768;
+  const showOneSlide = window?.innerWidth < 768;
 
 
   const sliderRef = useRef<CustomSliderRef>(null);
