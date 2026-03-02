@@ -4,10 +4,10 @@ import {
   ArrowCircleLeftIcon,
   ArrowCircleRightIcon,
 } from "@phosphor-icons/react/dist/ssr";
+import { useWindowWidth } from "@/src/hooks/useWindowWidth";
 export default function Testimonios() {
-
-  const showOneSlide = window?.innerWidth < 768;
-
+  const width = useWindowWidth();
+  const showOneSlide = width && width < 768;
 
   const sliderRef = useRef<CustomSliderRef>(null);
   return (
@@ -61,10 +61,16 @@ export default function Testimonios() {
 
         <div>
           <div>
-            <button onClick={() => sliderRef.current?.prev()} className="active:text-purple-700 cursor-pointer">
+            <button
+              onClick={() => sliderRef.current?.prev()}
+              className="active:text-purple-700 cursor-pointer"
+            >
               <ArrowCircleLeftIcon size={44} />
             </button>
-            <button onClick={() => sliderRef.current?.next()} className="active:text-purple-700 cursor-pointer">
+            <button
+              onClick={() => sliderRef.current?.next()}
+              className="active:text-purple-700 cursor-pointer"
+            >
               <ArrowCircleRightIcon size={44} />
             </button>
           </div>
@@ -89,7 +95,9 @@ const Card = React.memo(
     <div className="p-4">
       <div className="flex flex-col flex-1 bg-slate-100 min-h-[300px] rounded-4xl">
         <div className="p-12">
-          <p className="text-[24px] italic text-slate-500 leading-none">"{coment}"</p>
+          <p className="text-[24px] italic text-slate-500 leading-none">
+            "{coment}"
+          </p>
         </div>
         <div className="flex px-12 mb-10">
           <div className="h-[100px] w-[100px] rounded-[60px] overflow-hidden">
