@@ -2,6 +2,8 @@ import CustomSlider from "@/src/components/ui/slider/CustomSlider";
 import React from "react";
 
 export default function CasosExito() {
+  const showOneSlide = window.innerWidth < 768;
+
   return (
     <div className="flex justify-center">
       <div className="w-[100%] max-w-[1200px] p-6">
@@ -12,7 +14,10 @@ export default function CasosExito() {
           </h2>
           <br />
         </div>
-        <CustomSlider visibleSlides={2} config={{ indicatorColor: "#622a58" }}>
+        <CustomSlider
+          visibleSlides={showOneSlide ? 1 : 2}
+          config={{ indicatorColor: "#622a58" }}
+        >
           <Card
             imgSrc="/assets/images/caso_exito_1.png"
             nombreCampaña="Campaña Aprofe"

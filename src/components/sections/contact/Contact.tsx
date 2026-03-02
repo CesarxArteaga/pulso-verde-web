@@ -1,10 +1,9 @@
-import Button from "../../ui/button/Button";
 
 export default function Contact() {
   return (
     <div className="flex justify-center bg-amber-50">
       <div className="max-w-[1200px]">
-        <div className="grid grid-cols-2">
+        <div className="md:grid grid-cols-2">
           <div className="py-[100px] flex  place-content-center">
             <div className=" place-content-center">
               <p className="color-secondary font-[800] text-[45px] leading-none">

@@ -23,7 +23,12 @@ export default function PVStudio() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
+
+    
     (context) => {
+
+      if (window.innerWidth < 768) return
+
       const images = context.selector?.(".gallery-image") as HTMLElement[];
 
       const tl = gsap.timeline({
@@ -31,7 +36,6 @@ export default function PVStudio() {
           trigger: container.current,
           pin: true,
           start: "top top",
-          end: "+=200%",
           scrub: true,
         },
       });
@@ -55,22 +59,24 @@ export default function PVStudio() {
       <div className="max-w-[1200px]">
         <div
           ref={container}
-          className="min-h-screen flex items-center justify-center overflow-hidden px-8"
+          className="flex items-center justify-center overflow-hidden px-4"
         >
-          <div className="columns-2 gap-10 space-y-8">
+          <div className="columns-1 md:columns-2 gap-10 space-y-8">
             <div className="gallery-image">
-              <img
-                className="w-[220px] pt-6"
-                src="/assets/images/pv_studio.png"
-                alt="pvstudio"
-              />
-              <p className="color-terciary uppercase text-[40px] font-[800] leading-none">
+              <div className="flex justify-center">
+                <img
+                  className="w-[220px] pt-6"
+                  src="/assets/images/pv_studio.png"
+                  alt="pvstudio"
+                />
+              </div>
+              <p className="color-terciary uppercase text-[40px] text-center font-[800] leading-none">
                 PV studio
               </p>
-              <p className="uppercase py-10 text-[40px] leading-none font-[800] color-primary">
+              <p className="uppercase py-10 text-[30px] text-center md:text-[40px] leading-none font-[800] color-primary">
                 SOMOS UN ESTUDIO CREATIVO EXPERTO EN SOSTENIBILIDAD
               </p>
-              <p className="py-4 font-[400] text-[20px] leading-none text-neutral-800">
+              <p className="py-4 font-[400] text-[24px] text-center leading-none text-neutral-800">
                 Creamos contenido original que entretiene y visibiliza el
                 impacto real de las empresas y convierte esa conexión en
                 preferencia y confianza
@@ -91,50 +97,50 @@ export default function PVStudio() {
           </div>
         </div>
 
-        <div className="py-10">
+        <div className="py-10 hidden lg:flex">
           <p className="text-[20px] text-neutral-800 font-[400] py-10 text-center">
             Estas son algunas de las empresas que confían en nosotros
           </p>
-          <div
-            ref={containerRef}
-            className="relative overflow-hidden w-full h-20"
-          >
             <div
-              ref={trackRef}
-              className="flex items-center gap-12 whitespace-nowrap"
+              ref={containerRef}
+              className="relative overflow-hidden w-full h-20"
             >
-              {[1, 2, 3, 4, 5].map((item) => (
-                <img
-                  key={item}
-                  className="h-[70px] w-auto brightness-0"
-                  src={`/assets/images/clientes/${item}.png`}
-                  alt="Google"
-                />
-              ))}
-              {/* Duplicate manually */}
-              {[1, 2, 3, 4, 5].map((item) => (
-                <img
-                  key={`logo-dup-${item}`}
-                  className="h-[70px] w-auto brightness-0"
-                  src={`/assets/images/clientes/${item}.png`}
-                  alt="client logo"
-                />
-              ))}
-              {/* Duplicate manually */}
-              {[1, 2, 3, 4, 5].map((item) => (
-                <img
-                  key={`logo-dup-dup-${item}`}
-                  className="h-[70px] w-auto brightness-0"
-                  src={`/assets/images/clientes/${item}.png`}
-                  alt="client logo"
-                />
-              ))}
+              <div
+                ref={trackRef}
+                className="flex items-center gap-12 whitespace-nowrap"
+              >
+                {[1, 2, 3, 4, 5].map((item) => (
+                  <img
+                    key={item}
+                    className="h-[70px] w-auto brightness-0"
+                    src={`/assets/images/clientes/${item}.png`}
+                    alt="Google"
+                  />
+                ))}
+                {/* Duplicate manually */}
+                {[1, 2, 3, 4, 5].map((item) => (
+                  <img
+                    key={`logo-dup-${item}`}
+                    className="h-[70px] w-auto brightness-0"
+                    src={`/assets/images/clientes/${item}.png`}
+                    alt="client logo"
+                  />
+                ))}
+                {/* Duplicate manually */}
+                {[1, 2, 3, 4, 5].map((item) => (
+                  <img
+                    key={`logo-dup-dup-${item}`}
+                    className="h-[70px] w-auto brightness-0"
+                    src={`/assets/images/clientes/${item}.png`}
+                    alt="client logo"
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <p className="text-[30px] py-10 text-center font-[800]">
             100% Renovación
           </p>
-        </div>
       </div>
     </div>
   );

@@ -160,6 +160,15 @@ const CustomSlider = forwardRef<CustomSliderRef, Props>(
               <div
                 key={i}
                 className="flex-shrink-0 h-[100%] flex items-center justify-center"
+                // className="
+                //   flex-shrink-0
+                //   w-full
+                //   sm:w-full
+                //   md:w-1/2
+                //   lg:w-1/3
+                //   h-full
+                //   flex items-center justify-center
+                // "
               >
                 {slide}
               </div>

@@ -5,6 +5,10 @@ import {
   ArrowCircleRightIcon,
 } from "@phosphor-icons/react/dist/ssr";
 export default function Testimonios() {
+
+  const showOneSlide = window.innerWidth < 768;
+
+
   const sliderRef = useRef<CustomSliderRef>(null);
   return (
     <div className="flex justify-center">
@@ -22,7 +26,7 @@ export default function Testimonios() {
 
         <CustomSlider
           ref={sliderRef}
-          visibleSlides={2}
+          visibleSlides={showOneSlide ? 1 : 2}
           config={{
             disableDraggable: true,
             hideBarIndicator: true,
