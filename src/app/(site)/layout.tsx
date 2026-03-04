@@ -16,9 +16,29 @@ const causten = localFont({
       style: "normal",
     },
     {
+      path: "../../../public/fonts/causten/Causten-Medium.otf",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "../../../public/fonts/causten/Causten-SemiBold.otf",
+      weight: "600",
+      style: "semibold",
+    },
+    {
+      path: "../../../public/fonts/causten/Causten-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+    {
       path: "../../../public/fonts/causten/Causten-ExtraBold.otf",
       weight: "800",
       style: "extrabold",
+    },
+    {
+      path: "../../../public/fonts/causten/Causten-Black.otf",
+      weight: "900",
+      style: "black",
     },
   ],
   variable: "--font-causten",

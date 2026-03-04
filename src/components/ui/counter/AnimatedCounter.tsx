@@ -65,5 +65,5 @@ export default function AnimatedCounter({
     });
   }, [max]);
 
-  return <span ref={numberRef}>0</span>;
+  return <span ref={numberRef} className="text-neutral-800">0</span>;
 }

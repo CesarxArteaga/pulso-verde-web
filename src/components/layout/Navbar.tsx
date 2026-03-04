@@ -32,11 +32,15 @@ export default function Navbar() {
        */}
 
       <div className="h-[70px] lg:hidden flex flex-1 justify-between items-center px-4 py-2 sticky">
-        <div className="h-[100%]">
+        <div className="h-[60px] w-[122px]">
           <img
-            className="w-[100%] h-[100%] object-cover"
             src={"/assets/logos/pulso-verde-blanco-x1.png"}
             alt="logo"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
           />
         </div>
         <div>

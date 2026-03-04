@@ -62,13 +62,11 @@ export default function QuieresResumen() {
 
   return (
     <div className="flex justify-center bg-slate-50">
-      <div className="max-w-[1200px] p-6">
-        <br />
-        <br />
-        <p className="color-terciary uppercase text-[40px] font-[800]">
+      <div className="max-w-[1200px] px-6 my-8">
+        <p className="color-terciary mb-4 text-[40px] font-[700] leading-none">
           ¿Quiéres un resumen?
         </p>
-        <p className="color-terciary uppercase text-[30px]">
+        <p className="text-neutral-700 font-[500] md:font-[400] text-[20px] md:text-[24px] leading-none">
           Este video lo dice todo
         </p>
         <br />

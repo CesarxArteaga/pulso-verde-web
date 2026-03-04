@@ -67,7 +67,6 @@ body {
 }
 
 .hero-bg {
-  height: 100%;
   display: flex;
   background:
     radial-gradient(circle at 45% 45%,
@@ -79,8 +78,10 @@ body {
       #d8941c 0%,
       #9a5b32 60%,
       #f0a500 100%);
+
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   animation: gradientMove 12s ease-in-out infinite;
 }
 
@@ -105,14 +106,12 @@ body {
   height: 80px;
   width: auto;
   object-fit: contain;
-  /* filter: grayscale(100%); */
   opacity: 0.7;
   transition: 0.3s ease;
   filter: brightness(0) invert(0);
 }
 
 .logos-track img:hover {
-  /* filter: grayscale(0%); */
   opacity: 1;
 }
 
@@ -122,13 +121,12 @@ body {
   align-items: center;
   justify-content: center;
   perspective: 1200px;
-  /* stronger perspective for depth */
 }
 
 .slide {
   position: absolute;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .slide img {
@@ -149,6 +147,23 @@ body {
     radial-gradient(var(--R) at left 50% bottom calc(-1*var(--p)), var(--_g)) calc(50% - 2*var(--size)) calc(50% - var(--size)/2 - var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b)),
     radial-gradient(var(--R) at left 50% top calc(-1*var(--p)), var(--_g)) 50% calc(50% + var(--size)/2 + var(--b)/2)/calc(4*var(--size)) calc(var(--size) + var(--b));
   height: 30px;
+}
+
+
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background:
+      radial-gradient(circle at 20% 60%,
+        #6b2a6f 0%,
+        #7a3b6b 45%,
+        rgba(122, 59, 107, 0.6) 65%,
+        rgba(122, 59, 107, 0) 85%),
+      linear-gradient(160deg,
+        #d8941c 0%,
+        #9a5b32 70%,
+        #f0a500 100%);
+  }
 }
 
 @keyframes gradientMove {

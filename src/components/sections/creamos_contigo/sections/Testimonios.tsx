@@ -11,13 +11,11 @@ export default function Testimonios() {
 
   const sliderRef = useRef<CustomSliderRef>(null);
   return (
-    <div className="flex justify-center">
-      <div className="max-w-[1200px] w-[100%] p-6">
+    <div className="flex justify-center bg-slate-50">
+      <div className="max-w-[1200px] w-[100%] px-6">
         <div>
-          <p className="uppercase text-[40px] text-slate-800 font-[800]">
-            Testimonios
-          </p>
-          <p className="text-[20px]">
+          <p className="text-[40px] text-neutral-800 font-[700]">Testimonios</p>
+          <p className="text-[20px] font-[500] md:font-[400] text-neutral-700">
             Esto es lo que nuestros clientes opinan sobre nuestro trabajo.
           </p>
           <br />
@@ -26,7 +24,7 @@ export default function Testimonios() {
 
         <CustomSlider
           ref={sliderRef}
-          visibleSlides={showOneSlide ? 1 : 2}
+          visibleSlides={1}
           config={{
             disableDraggable: true,
             hideBarIndicator: true,
@@ -92,10 +90,10 @@ const Card = React.memo(
     name: string;
     position: string;
   }) => (
-    <div className="p-4">
+    <div className="px-2">
       <div className="flex flex-col flex-1 bg-slate-100 min-h-[300px] rounded-4xl">
         <div className="p-12">
-          <p className="text-[24px] italic text-slate-500 leading-none">
+          <p className="text-[24px] italic text-slate-600 leading-none">
             "{coment}"
           </p>
         </div>

@@ -80,12 +80,12 @@ export default function Hero() {
       <div className="w-[100%] max-w-[1200px] flex">
         <div className="h-[440px] md:h-[630px] flex flex-col place-content-center lg:grid lg:grid-cols-2 ">
           <div className="flex flex-col place-content-center px-4 md:px-8">
-            <p className="hero-text opacity-0 text-[#ffbb00] font-[800] uppercase text-[30px] text-center lg:text-[40px] xl:text-[45px] leading-none">
+            <h1 className="hero-text opacity-0 text-[#ffbb00] font-[700] text-[40px] text-center lg:text-[60px] xl:text-[45px] leading-none">
               Transformamos la sostenibilidad en entretenimiento
-            </p>
-            <p className="hero-text pt-8 opacity-0 text-white font-[300] text-[25px] text-center leading-none">
-              Nuestro propósito es: Agitar conciencias para convertirlas en
-              acciones de sostenibilidad
+            </h1>
+            <p className="hero-text pt-8 px-4 opacity-0 text-white font-[500] md:font-[400] text-[20px] md:text-[24px] text-center leading-none">
+              Nuestro propósito es: <br />
+              Agitar conciencias para convertirlas en acciones de sostenibilidad
             </p>
           </div>
           {/**
@@ -98,7 +98,7 @@ export default function Hero() {
             >
               {[1, 2, 3, 1, 2, 3].map((n, i) => (
                 <div
-                  className="slide  lg:w-[240px] lg:h-[410px] xl:w-[300px] xl:h-[440px]"
+                  className="slide lg:w-[240px] lg:h-[410px] xl:w-[300px] xl:h-[440px]"
                   key={i}
                 >
                   <img src={`/assets/images/slide/${n}.png`} alt="" />

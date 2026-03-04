@@ -23,11 +23,8 @@ export default function PVStudio() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
-
-    
     (context) => {
-
-      if (window.innerWidth < 768) return
+      if (window.innerWidth < 768) return;
 
       const images = context.selector?.(".gallery-image") as HTMLElement[];
 
@@ -56,10 +53,10 @@ export default function PVStudio() {
 
   return (
     <div className="flex justify-center bg-slate-50">
-      <div className="max-w-[1200px]">
+      <div className="max-w-[1200px] px-6">
         <div
           ref={container}
-          className="flex items-center justify-center overflow-hidden px-4"
+          className="flex items-center justify-center overflow-hidden"
         >
           <div className="columns-1 md:columns-2 gap-10 space-y-8">
             <div className="gallery-image">
@@ -73,10 +70,10 @@ export default function PVStudio() {
               <p className="color-terciary uppercase text-[40px] text-center font-[800] leading-none">
                 PV studio
               </p>
-              <p className="uppercase py-10 text-[30px] text-center md:text-[40px] leading-none font-[800] color-primary">
-                SOMOS UN ESTUDIO CREATIVO EXPERTO EN SOSTENIBILIDAD
+              <p className="py-10 text-[40px] text-center leading-none font-[700] color-primary">
+                Somos un estudio creativo experto en sostenibilidad
               </p>
-              <p className="py-4 font-[400] text-[24px] text-center leading-none text-neutral-800">
+              <p className="py-4 text-[20px] md:text-[24px] text-center leading-none font-[500] md:font-[400] text-neutral-700">
                 Creamos contenido original que entretiene y visibiliza el
                 impacto real de las empresas y convierte esa conexión en
                 preferencia y confianza
@@ -97,50 +94,50 @@ export default function PVStudio() {
           </div>
         </div>
 
-        <div className="py-10 hidden lg:flex">
+        <div className="py-10 hidden lg:flex lg:flex-col">
           <p className="text-[20px] text-neutral-800 font-[400] py-10 text-center">
             Estas son algunas de las empresas que confían en nosotros
           </p>
+          <div
+            ref={containerRef}
+            className="relative overflow-hidden w-full h-20"
+          >
             <div
-              ref={containerRef}
-              className="relative overflow-hidden w-full h-20"
+              ref={trackRef}
+              className="flex items-center gap-12 whitespace-nowrap"
             >
-              <div
-                ref={trackRef}
-                className="flex items-center gap-12 whitespace-nowrap"
-              >
-                {[1, 2, 3, 4, 5].map((item) => (
-                  <img
-                    key={item}
-                    className="h-[70px] w-auto brightness-0"
-                    src={`/assets/images/clientes/${item}.png`}
-                    alt="Google"
-                  />
-                ))}
-                {/* Duplicate manually */}
-                {[1, 2, 3, 4, 5].map((item) => (
-                  <img
-                    key={`logo-dup-${item}`}
-                    className="h-[70px] w-auto brightness-0"
-                    src={`/assets/images/clientes/${item}.png`}
-                    alt="client logo"
-                  />
-                ))}
-                {/* Duplicate manually */}
-                {[1, 2, 3, 4, 5].map((item) => (
-                  <img
-                    key={`logo-dup-dup-${item}`}
-                    className="h-[70px] w-auto brightness-0"
-                    src={`/assets/images/clientes/${item}.png`}
-                    alt="client logo"
-                  />
-                ))}
-              </div>
+              {[1, 2, 3, 4, 5].map((item) => (
+                <img
+                  key={item}
+                  className="h-[70px] w-auto brightness-0"
+                  src={`/assets/images/clientes/${item}.png`}
+                  alt="Google"
+                />
+              ))}
+              {/* Duplicate manually */}
+              {[1, 2, 3, 4, 5].map((item) => (
+                <img
+                  key={`logo-dup-${item}`}
+                  className="h-[70px] w-auto brightness-0"
+                  src={`/assets/images/clientes/${item}.png`}
+                  alt="client logo"
+                />
+              ))}
+              {/* Duplicate manually */}
+              {[1, 2, 3, 4, 5].map((item) => (
+                <img
+                  key={`logo-dup-dup-${item}`}
+                  className="h-[70px] w-auto brightness-0"
+                  src={`/assets/images/clientes/${item}.png`}
+                  alt="client logo"
+                />
+              ))}
             </div>
           </div>
-          <p className="text-[30px] py-10 text-center font-[800]">
-            100% Renovación
-          </p>
+        </div>
+        <p className="text-[20px] md:text-[30px] py-10 text-center font-[800] text-neutral-700">
+          100% Renovación
+        </p>
       </div>
     </div>
   );

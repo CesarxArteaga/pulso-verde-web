@@ -52,7 +52,7 @@ export default function CounterStats() {
                 <p className="text-[40px] font-[800] leading-none">
                   <AnimatedCounter max={3800000} delay={delayCount} />
                 </p>
-                <small>Views</small>
+                <small className="leading-none text-neutral-800">Views</small>
               </div>
               <div className="item-counter opacity-0">
                 <center>
@@ -65,7 +65,9 @@ export default function CounterStats() {
                 <p className="text-[40px] font-[800] leading-none">
                   <AnimatedCounter max={18.9} isPercentage delay={delayCount} />
                 </p>
-                <small>Engagement</small>
+                <small className="leading-none text-neutral-800">
+                  Engagement
+                </small>
               </div>
               <div className="item-counter opacity-0">
                 <center>
@@ -82,7 +84,7 @@ export default function CounterStats() {
                     delay={delayCount}
                   />
                 </p>{" "}
-                <small className="leading-none">Reach</small>
+                <small className="leading-none text-neutral-800">Reach</small>
               </div>
               <div className="item-counter opacity-0">
                 <center>
@@ -95,11 +97,11 @@ export default function CounterStats() {
                 <p className="text-[40px] font-[800] leading-none">
                   <AnimatedCounter max={75} isPercentage delay={delayCount} />
                 </p>{" "}
-                <small className="leading-none">Users</small>
+                <small className="leading-none text-neutral-800">Users</small>
               </div>
             </div>
-            <div className="flex justify-center">
-              <p className="legend px-4 text-center pt-4 text-[20px] text-neutral-800 opacity-0">
+            <div className="flex justify-center pt-4 md:pt-0">
+              <p className="legend px-6 py-12 md:py-8 text-center text-[20px] font-[500] md:font-[400] leading-none text-neutral-700 opacity-0">
                 Somos un hub de entretenimiento que usa el humor para agitar
                 conciencias y convertirlas en acciones de sostenibilidad
               </p>
