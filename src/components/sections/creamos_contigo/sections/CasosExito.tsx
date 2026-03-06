@@ -1,10 +1,20 @@
+'use client'
+
 import CustomSlider from "@/src/components/ui/slider/CustomSlider";
 import { useWindowWidth } from "@/src/hooks/useWindowWidth";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function CasosExito() {
-  const width = useWindowWidth();
-  const showOneSlide = width && width < 768;
+  const [defaultSlide, setDefaultSlide] = useState(1);
+  
+    useEffect(() => {
+      const update = () => setDefaultSlide(window.innerWidth > 768 ? 2 : 1);
+  
+      update();
+      window.addEventListener("resize", update);
+  
+      return () => window.removeEventListener("resize", update);
+    }, []);
 
   return (
     <div className="flex justify-center bg-slate-50">
@@ -16,7 +26,10 @@ export default function CasosExito() {
           </h2>
           <br />
         </div>
-        <CustomSlider visibleSlides={1} config={{ indicatorColor: "#622a58" }}>
+        <CustomSlider
+          visibleSlides={defaultSlide}
+          config={{ indicatorColor: "#622a58" }}
+        >
           <Card
             imgSrc="/assets/images/caso_exito_1.png"
             nombreCampaña="Campaña Aprofe"

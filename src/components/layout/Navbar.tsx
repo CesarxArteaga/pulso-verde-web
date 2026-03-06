@@ -26,13 +26,22 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="top-0 left-0 right-0 absolute flex justify-center">
+    <div
+      className="
+    top-0
+    w-[100%] 
+    absolute 
+    flex 
+    justify-center 
+    z-10 
+    "
+    >
       {/**
        * Mobile menu
        */}
 
       <div className="h-[70px] lg:hidden flex flex-1 justify-between items-center px-4 py-2 sticky">
-        <div className="h-[60px] w-[122px]">
+        <div className="h-[50px] w-[102px]">
           <img
             src={"/assets/logos/pulso-verde-blanco-x1.png"}
             alt="logo"

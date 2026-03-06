@@ -68,6 +68,7 @@ body {
 
 .hero-bg {
   display: flex;
+  position: relative;
   background:
     radial-gradient(circle at 45% 45%,
       #6b2a6f 0%,
@@ -154,15 +155,12 @@ body {
 @media (max-width: 768px) {
   .hero-bg {
     background:
-      radial-gradient(circle at 20% 60%,
+      radial-gradient(ellipse at 30% 10%,
         #6b2a6f 0%,
-        #7a3b6b 45%,
-        rgba(122, 59, 107, 0.6) 65%,
-        rgba(122, 59, 107, 0) 85%),
-      linear-gradient(160deg,
-        #d8941c 0%,
-        #9a5b32 70%,
-        #f0a500 100%);
+        #7a3b6b 40%,
+        rgba(122, 59, 107, 0.5) 65%,
+        rgba(122, 59, 107, 0) 80%),
+      linear-gradient(160deg, #d8941c 0%, #9a5b32 70%, #f0a500 100%);
   }
 }
 

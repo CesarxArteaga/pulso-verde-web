@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import CustomSlider, { CustomSliderRef } from "../../../ui/slider/CustomSlider";
 import {
   ArrowCircleLeftIcon,
@@ -6,7 +8,16 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { useWindowWidth } from "@/src/hooks/useWindowWidth";
 export default function Testimonios() {
-  const width = useWindowWidth();
+  const [defaultSlide, setDefaultSlide] = useState(1);
+
+  useEffect(() => {
+    const update = () => setDefaultSlide(window.innerWidth > 768 ? 2 : 1);
+
+    update();
+    window.addEventListener("resize", update);
+
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const sliderRef = useRef<CustomSliderRef>(null);
   return (
@@ -18,7 +29,7 @@ export default function Testimonios() {
                     px-6 
                     pt-[50px]
                     pb-[50px]
-      "
+                    "
       >
         <div>
           <p
@@ -27,7 +38,7 @@ export default function Testimonios() {
                       text-neutral-700 
                       font-[700]
                       color-primary
-          "
+                      "
           >
             Testimonios
           </p>
@@ -51,7 +62,7 @@ export default function Testimonios() {
 
         <CustomSlider
           ref={sliderRef}
-          visibleSlides={1}
+          visibleSlides={defaultSlide}
           config={{
             disableDraggable: true,
             hideBarIndicator: true,

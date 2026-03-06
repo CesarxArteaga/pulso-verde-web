@@ -128,7 +128,7 @@ export default function Team() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-primary">
+    <div className="flex justify-center pattern-1 bg-primary overflow-hidden">
       <div
         ref={container}
         className="

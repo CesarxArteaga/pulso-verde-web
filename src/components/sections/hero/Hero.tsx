@@ -2,6 +2,7 @@
 import { gsap, useGSAP } from "@/src/lib/gsap";
 import { useRef, useState } from "react";
 import CounterStats from "./CounterStats";
+import MobileBanner from "./MobileBanner";
 
 export default function Hero() {
   const container = useRef(null);
@@ -23,7 +24,7 @@ export default function Hero() {
         // Active card
         gsap.to(card, {
           x: 0,
-          scale: 1.3,
+          scale: 1.2,
           opacity: 1,
           zIndex: 3,
           duration: 0.6,
@@ -76,11 +77,47 @@ export default function Hero() {
 
   return (
     <div className="hero-bg flex flex-col items-center">
-      <div className="h-[75px]" />
+      {/** Mobile Banner */}
+      <div className="md:hidden w-[100%]">
+        <MobileBanner />
+      </div>
+
+      {/** */}
       <div className="w-[100%] max-w-[1200px] flex">
-        <div className="h-[440px] md:h-[630px] flex flex-col place-content-center lg:grid lg:grid-cols-2 ">
-          <div className="flex flex-col place-content-center px-4 md:px-8">
-            <h1 className="hero-text opacity-0 text-[#ffbb00] font-[700] text-[40px] text-center lg:text-[60px] xl:text-[45px] leading-none">
+        <div
+          className="
+                    -md:h-[630px] 
+                    flex 
+                    flex-col 
+                    place-content-center 
+                    lg:grid 
+                    lg:grid-cols-2 
+                    "
+        >
+          <div
+            className="
+                      flex 
+                      flex-col 
+                      place-content-center 
+                      px-6 
+                      md:px-8
+                      mt-[20px]
+                      mb-[50px]
+                      "
+          >
+            <h1
+              className="
+                        hero-text 
+                        opacity-0 
+                        text-[#ffbb00] 
+                        font-[700] 
+                        text-[40px] 
+                        text-center 
+                        lg:text-[60px] 
+                        xl:text-[45px] 
+                        leading-none
+                        "
+            >
               Transformamos la sostenibilidad en entretenimiento
             </h1>
             <p className="hero-text pt-8 px-4 opacity-0 text-white font-[500] md:font-[400] text-[20px] md:text-[24px] text-center leading-none">
@@ -91,14 +128,35 @@ export default function Hero() {
           {/**
            * SLIDER
            */}
-          <div className="hidden lg:flex flex-col place-content-center">
+          <div
+            className="
+                      hidden 
+                      md:h-[600px]
+                      lg:flex 
+                      flex-col 
+                      place-content-center
+                      mt-[70px]
+                      "
+          >
             <div
-              className="slider lg:w-[100%] lg:h-[400px] opacity-0 scale-0"
+              className="
+                        slider 
+                        lg:w-[100%] 
+                        lg:h-[400px] 
+                        opacity-0 
+                        scale-0
+                        "
               ref={container}
             >
               {[1, 2, 3, 1, 2, 3].map((n, i) => (
                 <div
-                  className="slide lg:w-[240px] lg:h-[410px] xl:w-[300px] xl:h-[440px]"
+                  className="
+                            slide 
+                            lg:w-[240px] 
+                            lg:h-[410px] 
+                            xl:w-[300px] 
+                            xl:h-[440px]
+                            "
                   key={i}
                 >
                   <img src={`/assets/images/slide/${n}.png`} alt="" />
