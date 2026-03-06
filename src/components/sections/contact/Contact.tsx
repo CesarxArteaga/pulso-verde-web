@@ -1,21 +1,30 @@
-
 export default function Contact() {
   return (
     <div className="flex justify-center bg-amber-50">
       <div className="max-w-[1200px]">
         <div className="md:grid grid-cols-2">
-          <div className="py-[100px] flex  place-content-center">
-            <div className=" place-content-center">
-              <p className="color-secondary font-[800] text-[45px] leading-none">
-                ¿QUÉ INICIATIVA DE
-              </p>
-              <p className="color-secondary font-[800] text-[45px] leading-none">
-                SOSTENIBILIDAD
-              </p>
-              <div className="bg-secondary">
-                <span className="text-white font-[800] text-[45px] leading-none">
-                  QUIERES COMUNICAR?
-                </span>
+          <div
+            className="
+                      pt-[50px]
+                      px-6 
+                      flex  
+                      flex-col
+                      place-content-center
+          "
+          >
+            <div
+              className="
+            "
+            >
+              <div className=" place-content-center">
+                <p
+                  className="color-secondary 
+              font-[700]
+              text-[40px] 
+              leading-none"
+                >
+                  ¿Qué iniciativa de sostenibilidad quieres comunicar?
+                </p>
               </div>
               <div>
                 <p className="py-[40px] text-neutral-500 text-[20px]">
@@ -28,45 +37,59 @@ export default function Contact() {
             </div>
           </div>
           <div className="bg-secondary">
-            <div className="px-12 py-4">
-              <div className="grid grid-col-1 gap-6 pb-6">
-                <p className="py-[30px] uppercase text-white text-center text-[26px] leading-none">
-                  <span className="font-[800]">Dejanos un mensaje</span>
-                  <br />
-                  <span className="font-[300]">
-                    Nos contáctaremos contigo de inmediato
-                  </span>
+            <div
+              className="
+                          px-6
+                          md:px-10
+                          pt-[50px]
+                          pb-[50px]
+                        "
+            >
+              <div className="grid grid-col-1 gap-6 ">
+                <p
+                  className="
+                            text-white 
+                            text-center 
+                            font-[700]
+                            text-[40px]
+                            leading-none
+                            "
+                >
+                  Dejanos un mensaje
                 </p>
-                <div className="bg-emerald-100 h-[55px] rounded-xl">
+                <p className="text-white text-[20px] text-center leading-none">
+                  Nos contáctaremos contigo de inmediato
+                </p>
+                <div className="bg-emerald-100 h-[55px] rounded-md">
                   <input
-                    className=" h-[100%] w-[100%] px-5 text-[20px]"
+                    className=" h-[100%] w-[100%] px-5 text-[20px] placeholder:text-neutral-500"
                     type="text"
                     name="nombre"
                     id="nombre"
                     placeholder="Nombre Completo"
                   />
                 </div>
-                <div className="bg-emerald-100 h-[55px] rounded-xl">
+                <div className="bg-emerald-100 h-[55px] rounded-md">
                   <input
-                    className=" h-[100%] w-[100%] px-5 text-[20px]"
+                    className=" h-[100%] w-[100%] px-5 text-[20px] placeholder:text-neutral-500"
                     type="email"
                     name="email"
                     id="email"
                     placeholder="Email"
                   />
                 </div>
-                <div className="bg-emerald-100 h-[55px] rounded-xl">
+                <div className="bg-emerald-100 h-[55px] rounded-md">
                   <input
-                    className=" h-[100%] w-[100%] px-5 text-[20px]"
+                    className=" h-[100%] w-[100%] px-5 text-[20px] placeholder:text-neutral-500"
                     type="text"
                     name="asunto"
                     id="asunto"
                     placeholder="Asunto"
                   />
                 </div>
-                <div className="bg-emerald-100 h-[200px] rounded-xl">
+                <div className="bg-emerald-100 h-[200px] rounded-md">
                   <textarea
-                    className="h-[100%] w-[100%] px-5 pt-3 text-[20px]"
+                    className="h-[100%] w-[100%] px-5 pt-3 text-[20px] placeholder:text-neutral-500"
                     name="mensaje"
                     id="mensaje"
                     placeholder="Mensaje"
@@ -74,8 +97,8 @@ export default function Contact() {
                   ></textarea>
                 </div>
                 <div className="flex justify-center">
-                  <button className="bg-primary color-terciary text-[20px] p-4 flex flex-1 justify-center cursor-pointer">
-                    ENVIAR
+                  <button className="bg-primary rounded-md color-terciary text-[20px] p-4 flex flex-1 justify-center cursor-pointer">
+                    Enviar
                   </button>
                 </div>
               </div>

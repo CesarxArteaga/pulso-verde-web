@@ -7,15 +7,42 @@ import {
 import { useWindowWidth } from "@/src/hooks/useWindowWidth";
 export default function Testimonios() {
   const width = useWindowWidth();
-  const showOneSlide = width && width < 768;
 
   const sliderRef = useRef<CustomSliderRef>(null);
   return (
     <div className="flex justify-center bg-slate-50">
-      <div className="max-w-[1200px] w-[100%] px-6">
+      <div
+        className="
+                    max-w-[1200px] 
+                    w-[100%] 
+                    px-6 
+                    pt-[50px]
+                    pb-[50px]
+      "
+      >
         <div>
-          <p className="text-[40px] text-neutral-800 font-[700]">Testimonios</p>
-          <p className="text-[20px] font-[500] md:font-[400] text-neutral-700">
+          <p
+            className="
+                      text-[40px] 
+                      text-neutral-700 
+                      font-[700]
+                      color-primary
+          "
+          >
+            Testimonios
+          </p>
+          <p
+            className="
+          text-[20px] 
+          font-[500] 
+          md:font-[400] 
+          text-neutral-700
+          leading-none
+          py-[20px]
+          text-center
+          md:text-left
+          "
+          >
             Esto es lo que nuestros clientes opinan sobre nuestro trabajo.
           </p>
           <br />
@@ -90,15 +117,49 @@ const Card = React.memo(
     name: string;
     position: string;
   }) => (
-    <div className="px-2">
-      <div className="flex flex-col flex-1 bg-slate-100 min-h-[300px] rounded-4xl">
-        <div className="p-12">
-          <p className="text-[24px] italic text-slate-600 leading-none">
+    <div className="">
+      <div
+        className="
+                    flex 
+                    flex-col 
+                    flex-1 
+                    bg-slate-200/60 
+                    rounded-4xl 
+                    py-6
+                    md:py-12
+                    "
+      >
+        <div
+          className="
+                    px-6
+                    md:px-12
+                    "
+        >
+          <p
+            className="
+                      text-[20px]
+                      md:text-[22px] 
+                      italic 
+                      text-neutral-700 
+                      leading-none
+                      text-justify
+                      mb-6
+                      "
+          >
             "{coment}"
           </p>
         </div>
-        <div className="flex px-12 mb-10">
-          <div className="h-[100px] w-[100px] rounded-[60px] overflow-hidden">
+        <div className="flex flex-col md:flex-row mx-6 md:mx-12">
+          <div
+            className="
+                      w-[60px]
+                      h-[60px]
+                      md:h-[100px] 
+                      md:w-[100px]
+                      rounded-[60px] 
+                      overflow-hidden
+                      "
+          >
             <img
               src={imgSrc}
               alt="profile"
@@ -108,9 +169,13 @@ const Card = React.memo(
               }}
             />
           </div>
-          <div className="pl-4">
-            <p className="text-[24px] text-slate-700 leading-none">{name}</p>
-            <p className="text-[18px] text-slate-600">{position}</p>
+          <div className="mt-2 md:ml-4">
+            <p className="text-[20px] md:text-[24px] text-slate-700 leading-none">
+              {name}
+            </p>
+            <p className="text-[18px] text-slate-600 leading-none">
+              {position}
+            </p>
           </div>
         </div>
       </div>

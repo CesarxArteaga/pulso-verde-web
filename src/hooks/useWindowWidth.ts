@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export function useWindowWidth() {
-  const [width, setWidth] = useState<number | null>(null);
+  const [width, setWidth] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     // This runs only in the browser

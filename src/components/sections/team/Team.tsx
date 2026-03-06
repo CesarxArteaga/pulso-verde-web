@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useGSAP, gsap } from "@/src/lib/gsap";
+import { useWindowWidth } from "@/src/hooks/useWindowWidth";
 
 export default function Team() {
   const container = useRef<HTMLDivElement>(null);
@@ -36,7 +37,10 @@ export default function Team() {
     },
   ];
 
+  const width = useWindowWidth();
+
   useGSAP(() => {
+    if (window?.innerWidth < 768) return;
     const ctx = gsap.context(() => {
       if (!container.current) return;
 
@@ -103,40 +107,81 @@ export default function Team() {
         ease: "circ.inOut",
       });
 
-      tl.fromTo(
-        ".team-title",
-        {
-          height: 0,
-          opacity: 0,
-          y: 100,
-        },
-        {
-          height: "auto",
-          opacity: 1,
-          y: 0,
-          ease: "power1.inOut",
-          duration: 0.3,
-        },
-      );
+      // tl.fromTo(
+      //   ".team-title",
+      //   {
+      //     height: 0,
+      //     opacity: 0,
+      //     y: 100,
+      //   },
+      //   {
+      //     height: "auto",
+      //     opacity: 1,
+      //     y: 0,
+      //     ease: "power1.inOut",
+      //     duration: 0.3,
+      //   },
+      // );
     }, container);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="flex justify-center bg-primary py-10">
+    <div className="flex justify-center bg-primary">
       <div
         ref={container}
-        className="w-[100%] max-w-[1200px] flex flex-col justify-center min-h-[500px]"
+        className="
+                  pt-[50px]
+                  pb-[50px]
+                  px-6
+                  w-[100%] 
+                  max-w-[1200px] 
+                  flex
+                  flex-col 
+                  justify-center 
+                  min-h-[500px]
+         "
       >
-        <div className="flex justify-center mb-8">
-          <div className="team-title bg-secondary px-4 py-2 rotate-[-3deg] ">
-            <p className="text-white text-[40px] font-[800] leading-none rotate-[2deg]">
+        <div
+          className="flex 
+                    justify-center 
+                    "
+        >
+          <div
+            className="
+                      team-title 
+                      bg-secondary 
+                      my-[30px]
+                      py-2
+                      px-4
+                      "
+          >
+            <p
+              className="
+                        text-white 
+                        text-[40px] 
+                        font-[700] 
+                        leading-none 
+                        "
+            >
               El Dream Team
             </p>
           </div>
         </div>
-        <div className="w-[100%] h-[auto] relative flex flex-wrap justify-between gap-4 w-full max-w-4xl mx-auto">
+        <div
+          className="
+                        w-[100%] 
+                        h-[auto] 
+                        relative 
+                        flex 
+                        flex-wrap 
+                        justify-center 
+                        gap-12 
+                        mx-auto
+                        py-4
+        "
+        >
           {team.map((member) => (
             <Member
               key={member.id}
@@ -153,26 +198,27 @@ export default function Team() {
 
 const Member = React.memo(
   ({ img, name, title }: { img: string; name: string; title: string }) => {
-    useGSAP(() => {
-      gsap.to(".name-wrapper", {
-        height: 100,
-        delay: 3.5,
-        opacity: 1,
-        duration: 1,
-        ease: "circ.inOut",
-      });
-    }, []);
-
     return (
       <div className="flex flex-col">
-        <div className=" opacity-0 photo h-[160px] w-[160px] rounded-[100px] border border-[6px] color-terciary overflow-hidden">
+        <div
+          className=" 
+        photo 
+        h-[160px] 
+        w-[160px] 
+        rounded-[100px] 
+        border 
+        border-[6px] 
+        color-terciary 
+        overflow-hidden
+        "
+        >
           <img
             className="h-[100%] w-[100%] object-cover scale-[1.3]"
             src={img}
             alt="member"
           />
         </div>
-        <div className="member-info overflow-hidden h-[0px]">
+        <div className="member-info overflow-hidden">
           <p className="text-center text-[20px] mt-2 text-white ">{name}</p>
           <p className="uppercase text-white text-center font-[800] max-w-[150px]">
             {title}

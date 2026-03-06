@@ -50,14 +50,18 @@ export default function CasosExito() {
             views="1.9M"
           />
         </CustomSlider>
-        <div>
-          <br />
+        <div className="flex justify-center">
           <p
-            className="text-[20px]
-                        text-neutral-700
-                        font-[500]
-                        md:font-[400]          
-            "
+            className=" 
+                      mt-[30px]
+                      md:max-w-[600px]
+                      text-[20px]
+                      text-neutral-700
+                      font-[500]
+                      md:font-[400]
+                      text-center   
+                      leading-none       
+                      "
           >
             Creamos campañas originales que convierten tus iniciativas
             sostenibles en un diferenciador para tus clientes y colaboradores.
@@ -86,7 +90,7 @@ const Card = React.memo(
     coments: string;
     saved: string;
   }) => (
-    <div>
+    <div className="relative">
       <div className="flex flex-1 md:grid grid-cols-2">
         <div>
           <div className="border-[10px] h-[520px] border-[#ffbb00]">
@@ -101,7 +105,7 @@ const Card = React.memo(
           </div>
         </div>
         <div className="md:hidden absolute bottom-0 w-[100%]">
-          <div className="absolute inset-0 bg-secondary opacity-70"></div>
+          <div className="absolute inset-0 bg-secondary opacity-60"></div>
           <div className="relative">
             <div className="px-4 py-4">
               <p className="text-[24px] font-[700]">{nombreCampaña}</p>
